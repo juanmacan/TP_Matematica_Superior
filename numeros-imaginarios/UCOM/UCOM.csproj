@@ -58,7 +58,7 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="NumeroComplejoFBinomica.cs" />
+    <Compile Include="NumeroComplejo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmIngresoNumerosComplejos.resx">
