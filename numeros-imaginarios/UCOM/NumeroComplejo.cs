@@ -17,6 +17,20 @@ namespace UCOM
             this.Imaginario = dbImaginario;
         }
 
+        public Double getReal()
+        {
+            return this.Real;
+        }
+
+        public Double getImaginario()
+        {
+            return this.Imaginario;
+        }
+
+        public NumeroComplejoFBinomica conjugado() {
+            return new NumeroComplejoFBinomica(this.Real, this.Imaginario * -1);
+        }
+
         public double Modulo()
         {
             double RealAlCuadrado = this.Real * this.Real;
@@ -32,6 +46,18 @@ namespace UCOM
         {
             return new NumeroComplejoFPolar(this.Modulo(),this.Angulo());
         }
+
+        
+
+        public NumeroComplejoFBinomica pasaDeATextoAFormaBinomica(String texto)
+        {
+            String real = "";
+            String imaginario = "";
+            int i = texto.IndexOf(";");
+            real = texto.Substring(1, i);
+            imaginario = texto.Substring(i, texto.LastIndexOf(")"));
+            return new NumeroComplejoFBinomica(Double.Parse(real), Double.Parse(imaginario));
+        }
     }
 
 
@@ -46,6 +72,22 @@ namespace UCOM
             Angulo = dAngulo;
         }
 
+        public double getReal() {
+            return this.Modulo * Math.Cos(Angulo);
+        }
+
+        public double getImaginario() {
+            return this.Modulo * Math.Sin(Angulo);
+        }
+
+        public double getModulo() {
+            return this.Modulo;
+        }
+
+        public double getAndulo() {
+            return this.Angulo;
+        }
+
         public NumeroComplejoFBinomica TransformarABinomica()
         {
             double real = Modulo * Math.Cos(Angulo);
@@ -53,6 +95,15 @@ namespace UCOM
             return new NumeroComplejoFBinomica(real,imaginario);
         }
 
+        public NumeroComplejoFPolar pasarDeTextoAFormaPolar(String texto)
+        {
+            String modulo;
+            String angulo;
+            int i = texto.IndexOf(";");
+            modulo = texto.Substring(1, i);
+            angulo = texto.Substring(i, texto.LastIndexOf("]"));
+            return new NumeroComplejoFPolar(Double.Parse(modulo), Double.Parse(angulo));
+        }
     }
 
 }
