@@ -49,7 +49,7 @@ namespace UCOM.Operaciones_Basicas
                     (n1.getReal() + n2.getReal(), n1.getImaginario() + n2.getImaginario());
         }
 
-        public NumeroComplejoFBinomica sumarBinomica
+        public NumeroComplejoFBinomica restarBinomica
             (NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
         {
             return new NumeroComplejoFBinomica

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UCOM.Utils;
 
 namespace UCOM
 {
@@ -40,14 +41,14 @@ namespace UCOM
         }
         public double Angulo()
         {
-            return Math.Atan(Imaginario / Real);
+            double angulo = Math.Atan2(Imaginario, Real);
+            return AngulosHelperClass.Instance().GetAnguloCorregido(angulo);
         }
+
         public NumeroComplejoFPolar TransformarAPolar()
         {
             return new NumeroComplejoFPolar(this.Modulo(),this.Angulo());
         }
-
-        
 
         public NumeroComplejoFBinomica pasaDeATextoAFormaBinomica(String texto)
         {
