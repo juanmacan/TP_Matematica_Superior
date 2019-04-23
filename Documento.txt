@@ -1,0 +1,23 @@
+Trabajo Práctico: Matemática Superior
+
+Para esta primera entrega se hizo 2 formularios. El primero donde se va a elegir el tipo de cálculo que se quiere hacer:
+ 
+
+Para esta entrega solo esta habilitado la opción de "EDT":
+ 
+
+En esta primera versión, la aplicación acepta el número complejo tanto en forma binomica como en forma polar, validando que se ingresen como el enunciado pide.
+Ejemplo del funcionamiento ingresando en forma binomica:
+   
+Ejemplo del funcionamiento ingresando en forma polar:
+  
+
+Ejemplo si se ingresa un número incorrecto:
+ 
+
+
+
+
+
+
+
