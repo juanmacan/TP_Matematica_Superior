@@ -27,7 +27,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\Apps\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -68,6 +68,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\AngulosHelperClass.cs" />
+    <Compile Include="Utils\FuncionesComunes.cs" />
     <EmbeddedResource Include="frmIngresoNumerosComplejos.resx">
       <DependentUpon>frmIngresoNumerosComplejos.cs</DependentUpon>
     </EmbeddedResource>

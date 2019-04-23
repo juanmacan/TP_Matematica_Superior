@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UCOM;
 
 namespace UCOM.Operaciones_Basicas
 {
@@ -24,7 +25,6 @@ namespace UCOM.Operaciones_Basicas
 
         private void buttonSumar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void buttonRestar_Click(object sender, EventArgs e)
@@ -42,11 +42,11 @@ namespace UCOM.Operaciones_Basicas
 
         }
 
-        public NumeroComplejoFBinomica sumarBinomica
-            (NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2) 
+        public NumeroComplejoFBinomica SumarBinomica(NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
         {
-                return new NumeroComplejoFBinomica
-                    (n1.getReal() + n2.getReal(), n1.getImaginario() + n2.getImaginario());
+            NumeroComplejoFBinomica Resultado = new NumeroComplejoFBinomica(n1.getReal() + n2.getReal(), n1.getImaginario() + n2.getImaginario());
+
+            return Resultado;
         }
 
         public NumeroComplejoFBinomica restarBinomica

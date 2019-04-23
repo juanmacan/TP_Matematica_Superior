@@ -7,7 +7,12 @@ using UCOM.Utils;
 
 namespace UCOM
 {
-    class NumeroComplejoFBinomica
+    public class NumeroComplejo
+    {
+
+    }
+
+    public class NumeroComplejoFBinomica : NumeroComplejo
     {
         private double Real { get; set; }
         private double Imaginario { get; set; }
@@ -49,20 +54,10 @@ namespace UCOM
         {
             return new NumeroComplejoFPolar(this.Modulo(),this.Angulo());
         }
-
-        public NumeroComplejoFBinomica pasaDeATextoAFormaBinomica(String texto)
-        {
-            String real = "";
-            String imaginario = "";
-            int i = texto.IndexOf(";");
-            real = texto.Substring(1, i);
-            imaginario = texto.Substring(i, texto.LastIndexOf(")"));
-            return new NumeroComplejoFBinomica(Double.Parse(real), Double.Parse(imaginario));
-        }
     }
 
 
-    class NumeroComplejoFPolar
+    public class NumeroComplejoFPolar : NumeroComplejo
     {
         private double Modulo { get; set; }
         private double Angulo { get; set; }
@@ -94,16 +89,6 @@ namespace UCOM
             double real = Modulo * Math.Cos(Angulo);
             double imaginario = Modulo * Math.Sin(Angulo);
             return new NumeroComplejoFBinomica(real,imaginario);
-        }
-
-        public NumeroComplejoFPolar pasarDeTextoAFormaPolar(String texto)
-        {
-            String modulo;
-            String angulo;
-            int i = texto.IndexOf(";");
-            modulo = texto.Substring(1, i);
-            angulo = texto.Substring(i, texto.LastIndexOf("]"));
-            return new NumeroComplejoFPolar(Double.Parse(modulo), Double.Parse(angulo));
         }
     }
 

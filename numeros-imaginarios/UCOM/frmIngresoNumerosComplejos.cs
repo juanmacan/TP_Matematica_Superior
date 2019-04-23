@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UCOM.Utils;
 
 namespace UCOM
 {
@@ -17,26 +18,72 @@ namespace UCOM
             InitializeComponent();
         }
 
+        private Boolean EsNumeroComplejoBinomica(string complejo)
+        {
+            return complejo.Substring(0, 1).Equals("(");
+        }
+
+
         private void CalcularModulo()
         {
-            string[] strAux = new string[2];
+            FuncionesComunes objFuncion = new FuncionesComunes();
             String strNumeroIngresado = this.txtNumeroIngresado.Text;
 
-            strNumeroIngresado = strNumeroIngresado.Substring(1, strNumeroIngresado.Length - 2);
+            if (objFuncion.ValidarNumeroComplejor(strNumeroIngresado))
+            {
+                if (this.EsNumeroComplejoBinomica(strNumeroIngresado))
+                {
+                    NumeroComplejoFBinomica Complejo = objFuncion.pasaDeATextoAFormaBinomica(strNumeroIngresado);
+                    this.txtResultado.Text = Complejo.Modulo().ToString();
+                }
+                else
+                {
+                    NumeroComplejoFPolar Complejo = objFuncion.pasarDeTextoAFormaPolar(strNumeroIngresado);
+                    this.txtResultado.Text = Complejo.getModulo().ToString();
+                }
+            }else
+            {
+                MessageBox.Show("El número ingresado no corresponde a un número complejo", "UCOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
+        }
 
-            strAux = strNumeroIngresado.Split(',');
+        private void CalcularArgumento()
+        {
+            FuncionesComunes objFuncion = new FuncionesComunes();
+            String strNumeroIngresado = this.txtNumeroIngresado.Text;
 
-            double real = Convert.ToDouble(strAux[0]); //Double.TryParse(strAux[0], );
-            double imaginario = Convert.ToDouble(strAux[1]);
-
-            NumeroComplejoFBinomica Complejo = new NumeroComplejoFBinomica(real, imaginario);
-
-            this.txtResultado.Text = Complejo.Modulo().ToString("0.00");
+            if (objFuncion.ValidarNumeroComplejor(strNumeroIngresado))
+            {
+                if (this.EsNumeroComplejoBinomica(strNumeroIngresado))
+                {
+                    NumeroComplejoFBinomica Complejo = objFuncion.pasaDeATextoAFormaBinomica(strNumeroIngresado);
+                    this.txtResultado.Text = Complejo.Angulo().ToString();
+                }
+                else
+                {
+                    NumeroComplejoFPolar Complejo = objFuncion.pasarDeTextoAFormaPolar(strNumeroIngresado);
+                    this.txtResultado.Text = Complejo.getAndulo().ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("El número ingresado no corresponde a un número complejo", "UCOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnModulo_Click(object sender, EventArgs e)
         {
             CalcularModulo();
+        }
+
+        private void BtnArgumento_Click(object sender, EventArgs e)
+        {
+            CalcularArgumento();
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

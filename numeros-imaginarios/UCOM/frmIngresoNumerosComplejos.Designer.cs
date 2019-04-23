@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnModulo = new System.Windows.Forms.Button();
             this.txtResultado = new System.Windows.Forms.TextBox();
+            this.btnArgumento = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNumeroIngresado
@@ -71,11 +73,33 @@
             this.txtResultado.Size = new System.Drawing.Size(143, 23);
             this.txtResultado.TabIndex = 3;
             // 
+            // btnArgumento
+            // 
+            this.btnArgumento.Location = new System.Drawing.Point(97, 95);
+            this.btnArgumento.Name = "btnArgumento";
+            this.btnArgumento.Size = new System.Drawing.Size(75, 23);
+            this.btnArgumento.TabIndex = 4;
+            this.btnArgumento.Text = "Argumento";
+            this.btnArgumento.UseVisualStyleBackColor = true;
+            this.btnArgumento.Click += new System.EventHandler(this.BtnArgumento_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(161, 187);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 5;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
             // frmIngresoNumerosComplejos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(248, 222);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnArgumento);
             this.Controls.Add(this.txtResultado);
             this.Controls.Add(this.btnModulo);
             this.Controls.Add(this.label1);
@@ -92,5 +116,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnModulo;
         private System.Windows.Forms.TextBox txtResultado;
+        private System.Windows.Forms.Button btnArgumento;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
