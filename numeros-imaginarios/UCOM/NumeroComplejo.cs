@@ -23,27 +23,15 @@ namespace UCOM
             this.Imaginario = dbImaginario;
         }
 
-        public Double getReal()
-        {
-            return this.Real;
-        }
-
-        public Double getImaginario()
-        {
-            return this.Imaginario;
-        }
-
         public NumeroComplejoFBinomica conjugado() {
-            return new NumeroComplejoFBinomica(this.Real, this.Imaginario * -1);
+            return new NumeroComplejoFBinomica(Real, Imaginario * -1);
         }
 
         public double Modulo()
         {
-            double RealAlCuadrado = this.Real * this.Real;
-            double ImaginarioAlCuadrado = this.Imaginario * this.Imaginario;
-
-            return Math.Sqrt(RealAlCuadrado + ImaginarioAlCuadrado);
+           return Math.Sqrt(Math.Pow(Real,Real) + Math.Pow(Imaginario, Imaginario));
         }
+
         public double Angulo()
         {
             double angulo = Math.Atan2(Imaginario, Real);
@@ -74,14 +62,6 @@ namespace UCOM
 
         public double getImaginario() {
             return this.Modulo * Math.Sin(Angulo);
-        }
-
-        public double getModulo() {
-            return this.Modulo;
-        }
-
-        public double getAndulo() {
-            return this.Angulo;
         }
 
         public NumeroComplejoFBinomica TransformarABinomica()

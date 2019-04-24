@@ -20,3 +20,5 @@ C:\Apps\UCOM.exe
 C:\Apps\UCOM.pdb
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.exe
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb
+C:\Users\Abel\Source\Repos\TP_Matematica_Superior2\numeros-imaginarios\UCOM\obj\Debug\UCOM.exe
+C:\Users\Abel\Source\Repos\TP_Matematica_Superior2\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb
