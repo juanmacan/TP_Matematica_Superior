@@ -156,6 +156,7 @@
             this.buttonVolver.TabIndex = 9;
             this.buttonVolver.Text = "VOLVER";
             this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.ButtonVolver_Click);
             // 
             // FormOperacionesBasicas
             // 
@@ -176,6 +177,7 @@
             this.Controls.Add(this.buttonSumar);
             this.Name = "FormOperacionesBasicas";
             this.Text = "FormOperacionesBasicas";
+            this.Load += new System.EventHandler(this.FormOperacionesBasicas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

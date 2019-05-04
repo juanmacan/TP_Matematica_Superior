@@ -1,9 +1,6 @@
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\bin\Release\UCOM.exe.config
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\bin\Release\UCOM.exe
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\bin\Release\UCOM.pdb
-C:\Apps\UCOM.exe.config
-C:\Apps\UCOM.exe
-C:\Apps\UCOM.pdb
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.csprojAssemblyReference.cache
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.frmIngresoNumerosComplejos.resources
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Home.resources
@@ -11,5 +8,3 @@ C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Properties.Resources.resources
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.csproj.GenerateResource.cache
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.csproj.CoreCompileInputs.cache
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.exe
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.pdb

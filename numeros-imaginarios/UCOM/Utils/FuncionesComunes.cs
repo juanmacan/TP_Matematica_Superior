@@ -30,7 +30,8 @@ namespace UCOM.Utils
 
         public Boolean isNumeric(string strnumero)
         {
-            return Double.TryParse(strnumero, n);
+            Double n = 0;
+            return Double.TryParse(strnumero, out n);
         }
 
         public Boolean ValidarNumeroComplejor(string parametro)

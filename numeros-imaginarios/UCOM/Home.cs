@@ -26,7 +26,9 @@ namespace UCOM
 
         private void LblOB_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("En progreso...", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var frm = new Operaciones_Basicas.FormOperacionesBasicas();
+
+            frm.Show();
         }
 
         private void LblOA_Click(object sender, EventArgs e)

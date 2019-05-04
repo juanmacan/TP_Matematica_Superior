@@ -44,7 +44,7 @@ namespace UCOM.Operaciones_Basicas
 
         public NumeroComplejoFBinomica SumarBinomica(NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
         {
-            NumeroComplejoFBinomica Resultado = new NumeroComplejoFBinomica(n1.getReal() + n2.getReal(), n1.getImaginario() + n2.getImaginario());
+            NumeroComplejoFBinomica Resultado = new NumeroComplejoFBinomica(n1.Real + n2.Real, n1.Imaginario + n2.Imaginario);
 
             return Resultado;
         }
@@ -53,30 +53,30 @@ namespace UCOM.Operaciones_Basicas
             (NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
         {
             return new NumeroComplejoFBinomica
-                (n1.getReal() - n2.getReal(), n1.getImaginario() - n2.getImaginario());
+                (n1.Real - n2.Real, n1.Imaginario - n2.Imaginario);
         }
 
         public NumeroComplejoFBinomica multiplicarBinomica
             (NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
         {
-            double multiReales = (n1.getReal() * n2.getReal())
-                                    -(n1.getImaginario()*n2.getImaginario());
-            double multiImaginarios = (n1.getReal() * n2.getImaginario())
-                                             + (n1.getImaginario() * n2.getReal());
+            double multiReales = (n1.Real * n2.Real)
+                                    -(n1.Imaginario*n2.Imaginario);
+            double multiImaginarios = (n1.Real * n2.Imaginario)
+                                             + (n1.Imaginario * n2.Real);
             return new NumeroComplejoFBinomica(multiReales, multiImaginarios);
         }
 
         public NumeroComplejoFBinomica dividirBinomica
             (NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
         {
-            double divisor = Math.Pow(n2.getReal(), 2) + Math.Pow(n2.getImaginario(), 2);
+            double divisor = Math.Pow(n2.Real, 2) + Math.Pow(n2.Imaginario, 2);
             NumeroComplejoFBinomica dividendo = this.multiplicarBinomica(n1,
                                             n2.conjugado());
 
-            double multiReales = (n1.getReal() * n2.getReal())
-                                    - (n1.getImaginario() * n2.getImaginario());
-            double multiImaginarios = (n1.getReal() * n2.getImaginario())
-                                             + (n1.getImaginario() * n2.getReal());
+            double multiReales = (n1.Real * n2.Real)
+                                    - (n1.Imaginario * n2.Imaginario);
+            double multiImaginarios = (n1.Real * n2.Imaginario)
+                                             + (n1.Imaginario * n2.Real);
             return new NumeroComplejoFBinomica(multiReales, multiImaginarios);
         }
 
@@ -84,6 +84,16 @@ namespace UCOM.Operaciones_Basicas
 
         private void ponerResultado(String res) {
             labelResultado.Text = res;
+        }
+
+        private void FormOperacionesBasicas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

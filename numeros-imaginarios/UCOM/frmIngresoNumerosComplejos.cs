@@ -39,7 +39,7 @@ namespace UCOM
                 else
                 {
                     NumeroComplejoFPolar Complejo = objFuncion.pasarDeTextoAFormaPolar(strNumeroIngresado);
-                    this.txtResultado.Text = Complejo.getModulo().ToString();
+                    this.txtResultado.Text = Complejo.Modulo.ToString();
                 }
             }else
             {
@@ -62,7 +62,7 @@ namespace UCOM
                 else
                 {
                     NumeroComplejoFPolar Complejo = objFuncion.pasarDeTextoAFormaPolar(strNumeroIngresado);
-                    this.txtResultado.Text = Complejo.getAndulo().ToString();
+                    this.txtResultado.Text = Complejo.Angulo.ToString();
                 }
             }
             else

@@ -14,8 +14,8 @@ namespace UCOM
 
     public class NumeroComplejoFBinomica : NumeroComplejo
     {
-        private double Real { get; set; }
-        private double Imaginario { get; set; }
+        public double Real { get; set; }
+        public double Imaginario { get; set; }
 
         public NumeroComplejoFBinomica(double dbReal, double dbImaginario)
         {
@@ -29,7 +29,7 @@ namespace UCOM
 
         public double Modulo()
         {
-           return Math.Sqrt(Math.Pow(Real,Real) + Math.Pow(Imaginario, Imaginario));
+           return Math.Sqrt(Math.Pow(Real,2) + Math.Pow(Imaginario, 2));
         }
 
         public double Angulo()
@@ -47,8 +47,8 @@ namespace UCOM
 
     public class NumeroComplejoFPolar : NumeroComplejo
     {
-        private double Modulo { get; set; }
-        private double Angulo { get; set; }
+        public double Modulo { get; set; }
+        public double Angulo { get; set; }
 
         public NumeroComplejoFPolar(double dModulo, double dAngulo)
         {
