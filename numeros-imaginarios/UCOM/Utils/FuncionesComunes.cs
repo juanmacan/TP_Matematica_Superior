@@ -93,5 +93,10 @@ namespace UCOM.Utils
 
             return false;
         }
+
+        public Boolean EsNumeroComplejoBinomica(string complejo)
+        {
+            return complejo.Substring(0, 1).Equals("(");
+        }
     }
 }

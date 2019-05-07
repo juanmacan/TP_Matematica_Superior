@@ -18,12 +18,6 @@ namespace UCOM
             InitializeComponent();
         }
 
-        private Boolean EsNumeroComplejoBinomica(string complejo)
-        {
-            return complejo.Substring(0, 1).Equals("(");
-        }
-
-
         private void CalcularModulo()
         {
             FuncionesComunes objFuncion = new FuncionesComunes();
@@ -31,7 +25,7 @@ namespace UCOM
 
             if (objFuncion.ValidarNumeroComplejor(strNumeroIngresado))
             {
-                if (this.EsNumeroComplejoBinomica(strNumeroIngresado))
+                if (objFuncion.EsNumeroComplejoBinomica(strNumeroIngresado))
                 {
                     NumeroComplejoFBinomica Complejo = objFuncion.pasaDeATextoAFormaBinomica(strNumeroIngresado);
                     this.txtResultado.Text = Complejo.Modulo().ToString();
@@ -54,7 +48,7 @@ namespace UCOM
 
             if (objFuncion.ValidarNumeroComplejor(strNumeroIngresado))
             {
-                if (this.EsNumeroComplejoBinomica(strNumeroIngresado))
+                if (objFuncion.EsNumeroComplejoBinomica(strNumeroIngresado))
                 {
                     NumeroComplejoFBinomica Complejo = objFuncion.pasaDeATextoAFormaBinomica(strNumeroIngresado);
                     this.txtResultado.Text = Complejo.Angulo().ToString();

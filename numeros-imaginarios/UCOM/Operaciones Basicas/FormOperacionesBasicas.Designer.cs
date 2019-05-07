@@ -109,7 +109,6 @@
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Número 2";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxNumero1
             // 
@@ -177,7 +176,6 @@
             this.Controls.Add(this.buttonSumar);
             this.Name = "FormOperacionesBasicas";
             this.Text = "FormOperacionesBasicas";
-            this.Load += new System.EventHandler(this.FormOperacionesBasicas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
