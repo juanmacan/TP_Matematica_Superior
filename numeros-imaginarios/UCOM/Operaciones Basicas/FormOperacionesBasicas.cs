@@ -105,18 +105,18 @@ namespace UCOM.Operaciones_Basicas
             {
                 string resultado;
 
-                NumeroComplejoFBinomica Complejo1 = obtenerNumeroEnFBinomica(this.textBoxNumero1.Text);
-                NumeroComplejoFBinomica Complejo2 = obtenerNumeroEnFBinomica(this.textBoxNumero2.Text);
+                NumeroComplejoFPolar Complejo1 = obtenerNumeroEnFPolar(this.textBoxNumero1.Text);
+                NumeroComplejoFPolar Complejo2 = obtenerNumeroEnFPolar(this.textBoxNumero2.Text);
 
-                NumeroComplejoFBinomica multiplicacion = this.multiplicarBinomica(Complejo1, Complejo2);
+                NumeroComplejoFPolar multiplicacion = this.multiplicarComplejos(Complejo1, Complejo2);
 
                 if (EsBinomica)
                 {
-                    resultado = "(" + multiplicacion.Real.ToString() + ", " + multiplicacion.Imaginario.ToString() + ")";
+                    resultado = "(" + multiplicacion.getReal().ToString().Replace(",", ".") + ", " + multiplicacion.getImaginario().ToString().Replace(",", ".") + ")";
                 }
                 else
                 {
-                    resultado = "[" + multiplicacion.Modulo().ToString() + "; " + multiplicacion.Angulo().ToString() + "]";
+                    resultado = "[" + multiplicacion.Modulo.ToString().Replace(",", ".") + "; " + multiplicacion.Angulo.ToString().Replace(",", ".") + "]";
                 }
 
                 this.ponerResultado(resultado);
@@ -134,18 +134,18 @@ namespace UCOM.Operaciones_Basicas
             {
                 string resultado;
 
-                NumeroComplejoFBinomica Complejo1 = obtenerNumeroEnFBinomica(this.textBoxNumero1.Text);
-                NumeroComplejoFBinomica Complejo2 = obtenerNumeroEnFBinomica(this.textBoxNumero2.Text);
+                NumeroComplejoFPolar Complejo1 = obtenerNumeroEnFPolar(this.textBoxNumero1.Text);
+                NumeroComplejoFPolar Complejo2 = obtenerNumeroEnFPolar(this.textBoxNumero2.Text);
 
-                NumeroComplejoFBinomica division = this.dividirBinomica(Complejo1, Complejo2);
+                NumeroComplejoFPolar division = this.dividirComplejos(Complejo1, Complejo2);
 
                 if (EsBinomica)
                 {
-                    resultado = "(" + division.Real.ToString() + ", " + division.Imaginario.ToString() + ")";
+                    resultado = "(" + division.getReal().ToString().Replace(",",".") + ", " + division.getImaginario().ToString().Replace(",", ".") + ")";
                 }
                 else
                 {
-                    resultado = "[" + division.Modulo().ToString() + "; " + division.Angulo().ToString() + "]";
+                    resultado = "[" + division.Modulo.ToString().Replace(",", ".") + "; " + division.Angulo.ToString().Replace(",", ".") + "]";
                 }
 
                 this.ponerResultado(resultado);
@@ -173,28 +173,16 @@ namespace UCOM.Operaciones_Basicas
                 (n1.Real - n2.Real, n1.Imaginario - n2.Imaginario);
         }
 
-        public NumeroComplejoFBinomica multiplicarBinomica
-            (NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
+        public NumeroComplejoFPolar multiplicarComplejos
+            (NumeroComplejoFPolar n1, NumeroComplejoFPolar n2)
         {
-            double multiReales = (n1.Real * n2.Real)
-                                    -(n1.Imaginario*n2.Imaginario);
-            double multiImaginarios = (n1.Real * n2.Imaginario)
-                                             + (n1.Imaginario * n2.Real);
-            return new NumeroComplejoFBinomica(multiReales, multiImaginarios);
+            return new NumeroComplejoFPolar(n1.Modulo * n2.Modulo, n1.Angulo + n2.Angulo);
         }
 
-        public NumeroComplejoFBinomica dividirBinomica
-            (NumeroComplejoFBinomica n1, NumeroComplejoFBinomica n2)
+        public NumeroComplejoFPolar dividirComplejos
+            (NumeroComplejoFPolar n1, NumeroComplejoFPolar n2)
         {
-            double divisor = Math.Pow(n2.Real, 2) + Math.Pow(n2.Imaginario, 2);
-            NumeroComplejoFBinomica dividendo = this.multiplicarBinomica(n1,
-                                            n2.conjugado());
-
-            double multiReales = (n1.Real * n2.Real)
-                                    - (n1.Imaginario * n2.Imaginario);
-            double multiImaginarios = (n1.Real * n2.Imaginario)
-                                             + (n1.Imaginario * n2.Real);
-            return new NumeroComplejoFBinomica(multiReales, multiImaginarios);
+            return new NumeroComplejoFPolar(n1.Modulo / n2.Modulo, n1.Angulo - n2.Angulo);
         }
 
         public NumeroComplejoFBinomica obtenerNumeroEnFBinomica(string texto)
@@ -212,6 +200,29 @@ namespace UCOM.Operaciones_Basicas
                     EsBinomica = false;
                     NumeroComplejoFPolar Complejo = objFuncion.pasarDeTextoAFormaPolar(texto);
                     return Complejo.TransformarABinomica();
+                }
+            }
+            else
+            {
+                throw new Exception("El número ingresado no corresponde a un número complejo");
+            }
+        }
+
+        public NumeroComplejoFPolar obtenerNumeroEnFPolar(string texto)
+        {
+            FuncionesComunes objFuncion = new FuncionesComunes();
+            if (objFuncion.ValidarNumeroComplejor(texto))
+            {
+                if (objFuncion.EsNumeroComplejoBinomica(texto))
+                {
+                    EsBinomica = true;
+                    NumeroComplejoFBinomica Complejo = objFuncion.pasaDeATextoAFormaBinomica(texto);
+                    return Complejo.TransformarAPolar();
+                }
+                else
+                {
+                    EsBinomica = false;
+                    return objFuncion.pasarDeTextoAFormaPolar(texto);
                 }
             }
             else
