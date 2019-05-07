@@ -24,7 +24,7 @@ namespace UCOM.Utils
             String angulo;
             string[] Numero = texto.Split(';');
             modulo = Numero[0].Substring(1);
-            angulo = Numero[1].Substring(0, Numero[1].Length - 1);
+            angulo = Numero[1].Substring(0, Numero[1].Length - 1).Replace(".",",");
             return new NumeroComplejoFPolar(Double.Parse(modulo), Double.Parse(angulo));
         }
 

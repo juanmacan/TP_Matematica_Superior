@@ -175,7 +175,7 @@
             this.Controls.Add(this.buttonRestar);
             this.Controls.Add(this.buttonSumar);
             this.Name = "FormOperacionesBasicas";
-            this.Text = "FormOperacionesBasicas";
+            this.Text = "Operaciones Básicas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

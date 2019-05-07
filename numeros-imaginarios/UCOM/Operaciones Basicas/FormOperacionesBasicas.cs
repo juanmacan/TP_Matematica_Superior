@@ -54,11 +54,11 @@ namespace UCOM.Operaciones_Basicas
 
                 if (EsBinomica)
                 {
-                    resultado = "(" + Suma.Real.ToString() + ", " + Suma.Imaginario.ToString() + ")";
+                    resultado = "(" + Suma.Real.ToString().Replace(",", ".") + ", " + Suma.Imaginario.ToString().Replace(",", ".") + ")";
                 }
                 else
                 {
-                    resultado = "[" + Suma.Modulo().ToString() + "; " + Suma.Angulo().ToString() + "]";
+                    resultado = "[" + Suma.Modulo().ToString().Replace(",", ".") + "; " + Suma.Angulo().ToString().Replace(",", ".") + "]";
                 }
 
                 this.ponerResultado(resultado);
@@ -83,11 +83,11 @@ namespace UCOM.Operaciones_Basicas
 
                 if (EsBinomica)
                 {
-                    resultado = "(" + resta.Real.ToString() + ", " + resta.Imaginario.ToString() + ")";
+                    resultado = "(" + resta.Real.ToString().Replace(",", ".") + ", " + resta.Imaginario.ToString().Replace(",", ".") + ")";
                 }
                 else
                 {
-                    resultado = "[" + resta.Modulo().ToString() + "; " + resta.Angulo().ToString() + "]";
+                    resultado = "[" + resta.Modulo().ToString().Replace(",", ".") + "; " + resta.Angulo().ToString().Replace(",", ".") + "]";
                 }
 
                 this.ponerResultado(resultado);
@@ -204,7 +204,7 @@ namespace UCOM.Operaciones_Basicas
             }
             else
             {
-                throw new Exception("El número ingresado no corresponde a un número complejo");
+                throw new Exception("El número " + texto + " no corresponde a un número complejo válido.");
             }
         }
 
@@ -227,7 +227,7 @@ namespace UCOM.Operaciones_Basicas
             }
             else
             {
-                throw new Exception("El número ingresado no corresponde a un número complejo");
+                throw new Exception("El número " + texto + " no corresponde a un número complejo válido.");
             }
         }
 
