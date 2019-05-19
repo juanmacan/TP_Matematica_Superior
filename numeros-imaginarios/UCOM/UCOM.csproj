@@ -59,6 +59,18 @@
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="NumeroComplejo.cs" />
+    <Compile Include="Operaciones Avanzadas\OAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones Avanzadas\OAForm.Designer.cs">
+      <DependentUpon>OAForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones Avanzadas\PotenciacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones Avanzadas\PotenciacionForm.Designer.cs">
+      <DependentUpon>PotenciacionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operaciones Basicas\FormOperacionesBasicas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones Avanzadas\OAForm.resx">
+      <DependentUpon>OAForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones Avanzadas\PotenciacionForm.resx">
+      <DependentUpon>PotenciacionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones Basicas\FormOperacionesBasicas.resx">
       <DependentUpon>FormOperacionesBasicas.cs</DependentUpon>

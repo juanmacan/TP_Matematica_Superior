@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using UCOM.Operaciones_Avanzadas;
 namespace UCOM
 {
     public partial class Home : Form
@@ -33,7 +33,7 @@ namespace UCOM
 
         private void LblOA_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("En progreso...", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            new OAForm().Show();
         }
 
         private void LblSF_Click(object sender, EventArgs e)
