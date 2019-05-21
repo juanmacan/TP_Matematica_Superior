@@ -7,6 +7,9 @@ C:\Apps\UCOM.pdb
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.csprojAssemblyReference.cache
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.frmIngresoNumerosComplejos.resources
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Home.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Operaciones_Avanzadas.OAForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Operaciones_Avanzadas.PotenciacionForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Operaciones_Avanzadas.RadicacionForm.resources
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Operaciones_Basicas.FormOperacionesBasicas.resources
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.Properties.Resources.resources
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Release\UCOM.csproj.GenerateResource.cache

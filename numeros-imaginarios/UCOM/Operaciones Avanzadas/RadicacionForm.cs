@@ -45,33 +45,41 @@ namespace UCOM.Operaciones_Avanzadas
 
         private void CalcularRaiz()
         {
-            string strResultado = "";
-            string strResultadoAMostrar = "";
-            NumeroComplejoFPolar numero = obtenerNumeroEnFPolar(NumTxt.Text);
-            Double Raiz = Double.Parse(RaizTxt.Text);
-
-            int CantidadDeRespuestas = int.Parse(RaizTxt.Text);
-            double potencia = (double)1 / CantidadDeRespuestas;
-
-            for (int i = 0; i < CantidadDeRespuestas; i++)
+            try
             {
-                Double Angulo = (numero.Angulo + (2 * i * Math.PI)) / CantidadDeRespuestas;
-                NumeroComplejoFPolar Resultado = new NumeroComplejoFPolar(Math.Pow(numero.Modulo, potencia), Angulo);
+                string strResultado = "";
+                string strResultadoAMostrar = "";
+                NumeroComplejoFPolar numero = obtenerNumeroEnFPolar(NumTxt.Text);
+                Double Raiz = Double.Parse(RaizTxt.Text);
 
-                if (EsBinomica)
+                int CantidadDeRespuestas = int.Parse(RaizTxt.Text);
+                double potencia = (double)1 / CantidadDeRespuestas;
+
+                for (int i = 0; i < CantidadDeRespuestas; i++)
                 {
-                    NumeroComplejoFBinomica NBinomica = Resultado.TransformarABinomica();
-                    strResultado = "(" + NBinomica.Real + ", " + NBinomica.Imaginario + ")";
-                }
-                else
-                {
-                    strResultado = "[" + Resultado.Modulo + "; " + Resultado.Angulo + "]";
+                    Double Angulo = (numero.Angulo + (2 * i * Math.PI)) / CantidadDeRespuestas;
+                    NumeroComplejoFPolar Resultado = new NumeroComplejoFPolar(Math.Pow(numero.Modulo, potencia), Angulo);
+
+                    if (EsBinomica)
+                    {
+                        NumeroComplejoFBinomica NBinomica = Resultado.TransformarABinomica();
+                        strResultado = "(" + NBinomica.Real + ", " + NBinomica.Imaginario + ")";
+                    }
+                    else
+                    {
+                        strResultado = "[" + Resultado.Modulo + "; " + Resultado.Angulo + "]";
+                    }
+
+                    strResultadoAMostrar += "W" + i.ToString() + " = " + strResultado + "\n";
                 }
 
-                strResultadoAMostrar += "W" + i.ToString() + " = " + strResultado+ "\n";
+                lblResultados.Text = strResultadoAMostrar;
             }
-
-            lblResultados.Text = strResultadoAMostrar;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "UCOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private string ValidarCampos()
