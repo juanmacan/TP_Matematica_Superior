@@ -61,6 +61,7 @@
             this.RadBtn.TabIndex = 1;
             this.RadBtn.Text = "Radicacion";
             this.RadBtn.UseVisualStyleBackColor = true;
+            this.RadBtn.Click += new System.EventHandler(this.RadBtn_Click);
             // 
             // OAForm
             // 

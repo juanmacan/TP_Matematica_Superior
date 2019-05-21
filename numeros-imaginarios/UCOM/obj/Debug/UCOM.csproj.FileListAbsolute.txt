@@ -33,3 +33,6 @@ C:\Users\Usuario\Desktop\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Deb
 C:\Users\Usuario\Desktop\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb
 C:\Users\Usuario\Desktop\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.OAForm.resources
 C:\Users\Usuario\Desktop\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.PotenciacionForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.OAForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.PotenciacionForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.RadicacionForm.resources

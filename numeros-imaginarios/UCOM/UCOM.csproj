@@ -71,6 +71,12 @@
     <Compile Include="Operaciones Avanzadas\PotenciacionForm.Designer.cs">
       <DependentUpon>PotenciacionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operaciones Avanzadas\RadicacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones Avanzadas\RadicacionForm.Designer.cs">
+      <DependentUpon>RadicacionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operaciones Basicas\FormOperacionesBasicas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones Avanzadas\PotenciacionForm.resx">
       <DependentUpon>PotenciacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones Avanzadas\RadicacionForm.resx">
+      <DependentUpon>RadicacionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones Basicas\FormOperacionesBasicas.resx">
       <DependentUpon>FormOperacionesBasicas.cs</DependentUpon>

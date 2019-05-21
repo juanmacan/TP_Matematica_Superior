@@ -23,5 +23,11 @@ namespace UCOM.Operaciones_Avanzadas
             this.Hide();
             new PotenciacionForm().Show();
         }
+
+        private void RadBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RadicacionForm().Show();
+        }
     }
 }

@@ -3,49 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UCOM.Utils;
 
 namespace UCOM.Operaciones_Avanzadas
 {
-    public partial class PotenciacionForm : Form
+    public partial class RadicacionForm : Form
     {
         private Boolean EsBinomica;
 
-        public PotenciacionForm()
+        public RadicacionForm()
         {
             InitializeComponent();
-        }
-
-        private void CalcularPotencia()
-        {
-            try
-            {
-                NumeroComplejoFPolar numero = obtenerNumeroEnFPolar(NumTxt.Text);
-                Double potencia = Double.Parse(PotTxt.Text);
-
-                NumeroComplejoFPolar Resultado = new NumeroComplejoFPolar(Math.Pow(numero.Modulo, potencia), numero.Angulo * potencia);
-
-                if (EsBinomica)
-                {
-                    NumeroComplejoFBinomica NBinomica = Resultado.TransformarABinomica();
-                    RsltTxt.Text = "(" + NBinomica.Real +"," + NBinomica.Imaginario +")";
-                }
-                else
-                {
-                    RsltTxt.Text = "[" + Resultado.Modulo + "," + Resultado.Angulo + "]";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "UCOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         public NumeroComplejoFPolar obtenerNumeroEnFPolar(string texto)
@@ -71,6 +43,37 @@ namespace UCOM.Operaciones_Avanzadas
             }
         }
 
+        private void CalcularRaiz()
+        {
+            string strResultado = "";
+            string strResultadoAMostrar = "";
+            NumeroComplejoFPolar numero = obtenerNumeroEnFPolar(NumTxt.Text);
+            Double Raiz = Double.Parse(RaizTxt.Text);
+
+            int CantidadDeRespuestas = int.Parse(RaizTxt.Text);
+            double potencia = (double)1 / CantidadDeRespuestas;
+
+            for (int i = 0; i < CantidadDeRespuestas; i++)
+            {
+                Double Angulo = (numero.Angulo + (2 * i * Math.PI)) / CantidadDeRespuestas;
+                NumeroComplejoFPolar Resultado = new NumeroComplejoFPolar(Math.Pow(numero.Modulo, potencia), Angulo);
+
+                if (EsBinomica)
+                {
+                    NumeroComplejoFBinomica NBinomica = Resultado.TransformarABinomica();
+                    strResultado = "(" + NBinomica.Real + ", " + NBinomica.Imaginario + ")";
+                }
+                else
+                {
+                    strResultado = "[" + Resultado.Modulo + "; " + Resultado.Angulo + "]";
+                }
+
+                strResultadoAMostrar += "W" + i.ToString() + " = " + strResultado+ "\n";
+            }
+
+            lblResultados.Text = strResultadoAMostrar;
+        }
+
         private string ValidarCampos()
         {
             string respuesta = "";
@@ -79,9 +82,9 @@ namespace UCOM.Operaciones_Avanzadas
             {
                 respuesta += "Debe ingresar un número complejo.\n";
             }
-            if (PotTxt.Text == "")
+            if (RaizTxt.Text == "")
             {
-                respuesta += "Debe ingresar una potencia.\n";
+                respuesta += "Debe ingresar una Raíz.\n";
             }
 
             return respuesta;
@@ -93,17 +96,12 @@ namespace UCOM.Operaciones_Avanzadas
 
             if (validacion == "")
             {
-                this.CalcularPotencia();
+                this.CalcularRaiz();
             }
             else
             {
                 MessageBox.Show(validacion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
