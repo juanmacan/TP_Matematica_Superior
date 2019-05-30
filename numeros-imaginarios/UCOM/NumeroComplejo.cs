@@ -7,10 +7,7 @@ using UCOM.Utils;
 
 namespace UCOM
 {
-    public class NumeroComplejo
-    {
-
-    }
+    public class NumeroComplejo{}
 
     public class NumeroComplejoFBinomica : NumeroComplejo
     {

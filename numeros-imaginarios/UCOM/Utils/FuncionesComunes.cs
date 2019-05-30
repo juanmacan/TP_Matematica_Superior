@@ -98,5 +98,28 @@ namespace UCOM.Utils
         {
             return complejo.Substring(0, 1).Equals("(");
         }
+
+        //Parsear un string y convertirlo a Fasor.Falta terminar
+        public Fasor StringToFasor(string f)
+        {
+            var amplitud = f.Substring(0);
+
+            //Fasor fas = new Fasor(Convert.ToDouble(amplitud),_,_);
+
+            return fas;
+        }
+
+        //Convertir a binomica para facilitar las cuentas y convertir luego en fasor. Falta Terminar
+        public Fasor SumarFasores(Fasor fas1,Fasor fas2)
+        {
+            if (fas1.GetFrecuencia() == fas2.GetFrecuencia())
+            {
+                NumeroComplejoFBinomica fun1 = fas1.ConvertirABinomica();
+                NumeroComplejoFBinomica fun2 = fas2.ConvertirABinomica();
+
+                NumeroComplejoFBinomica resultado = new NumeroComplejoFBinomica((fun1.Real + fun2.Real), (fun1.Imaginario + fun2.Imaginario)); 
+            }
+        }
+        
     }
 }

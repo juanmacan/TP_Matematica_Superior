@@ -36,3 +36,5 @@ C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csproj.CoreCompileInputs.cache
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.exe
 C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb
+C:\Users\Usuario\Desktop\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.RadicacionForm.resources
+C:\Users\Usuario\Desktop\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Suma_Fasores.SumaFasoresForm.resources
