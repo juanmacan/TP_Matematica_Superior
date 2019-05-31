@@ -38,7 +38,7 @@ namespace UCOM
 
         private void LblSF_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("En progreso...", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            new Suma_Fasores.SumaFasoresForm().Show();
         }
 
         private void Home_Load(object sender, EventArgs e)
