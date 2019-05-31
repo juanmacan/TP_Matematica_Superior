@@ -36,13 +36,15 @@
             this.RsltTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btmIngresarPINroComplejo = new System.Windows.Forms.Button();
+            this.btmIngresarPIPotencia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumTxt
             // 
             this.NumTxt.Location = new System.Drawing.Point(13, 35);
             this.NumTxt.Name = "NumTxt";
-            this.NumTxt.Size = new System.Drawing.Size(230, 20);
+            this.NumTxt.Size = new System.Drawing.Size(284, 20);
             this.NumTxt.TabIndex = 0;
             // 
             // label1
@@ -67,12 +69,12 @@
             // 
             this.PotTxt.Location = new System.Drawing.Point(12, 74);
             this.PotTxt.Name = "PotTxt";
-            this.PotTxt.Size = new System.Drawing.Size(230, 20);
+            this.PotTxt.Size = new System.Drawing.Size(285, 20);
             this.PotTxt.TabIndex = 0;
             // 
             // CalcBtn
             // 
-            this.CalcBtn.Location = new System.Drawing.Point(168, 100);
+            this.CalcBtn.Location = new System.Drawing.Point(222, 100);
             this.CalcBtn.Name = "CalcBtn";
             this.CalcBtn.Size = new System.Drawing.Size(75, 23);
             this.CalcBtn.TabIndex = 3;
@@ -106,11 +108,33 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // btmIngresarPINroComplejo
+            // 
+            this.btmIngresarPINroComplejo.Location = new System.Drawing.Point(15, 100);
+            this.btmIngresarPINroComplejo.Name = "btmIngresarPINroComplejo";
+            this.btmIngresarPINroComplejo.Size = new System.Drawing.Size(201, 23);
+            this.btmIngresarPINroComplejo.TabIndex = 12;
+            this.btmIngresarPINroComplejo.Text = "Ingresar π (Pi) en Nro Complejo";
+            this.btmIngresarPINroComplejo.UseVisualStyleBackColor = true;
+            this.btmIngresarPINroComplejo.Click += new System.EventHandler(this.btmIngresarPINroComplejo_Click);
+            // 
+            // btmIngresarPIPotencia
+            // 
+            this.btmIngresarPIPotencia.Location = new System.Drawing.Point(15, 129);
+            this.btmIngresarPIPotencia.Name = "btmIngresarPIPotencia";
+            this.btmIngresarPIPotencia.Size = new System.Drawing.Size(201, 23);
+            this.btmIngresarPIPotencia.TabIndex = 13;
+            this.btmIngresarPIPotencia.Text = "Ingresar π (Pi) en potencia";
+            this.btmIngresarPIPotencia.UseVisualStyleBackColor = true;
+            this.btmIngresarPIPotencia.Click += new System.EventHandler(this.btmIngresarPIPotencia_Click);
+            // 
             // PotenciacionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 259);
+            this.Controls.Add(this.btmIngresarPIPotencia);
+            this.Controls.Add(this.btmIngresarPINroComplejo);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.RsltTxt);
             this.Controls.Add(this.CalcBtn);
@@ -136,5 +160,7 @@
         private System.Windows.Forms.TextBox RsltTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btmIngresarPINroComplejo;
+        private System.Windows.Forms.Button btmIngresarPIPotencia;
     }
 }

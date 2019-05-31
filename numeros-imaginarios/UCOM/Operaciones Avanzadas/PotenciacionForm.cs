@@ -105,5 +105,15 @@ namespace UCOM.Operaciones_Avanzadas
         {
             this.Close();
         }
+
+        private void btmIngresarPINroComplejo_Click(object sender, EventArgs e)
+        {
+            NumTxt.Text = NumTxt.Text + "π";
+        }
+
+        private void btmIngresarPIPotencia_Click(object sender, EventArgs e)
+        {
+            PotTxt.Text = PotTxt.Text + "π";
+        }
     }
 }

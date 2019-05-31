@@ -239,5 +239,15 @@ namespace UCOM.Operaciones_Basicas
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxNumero1.Text = textBoxNumero1.Text + "π";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBoxNumero2.Text = textBoxNumero2.Text + "π";
+        }
     }
 }
