@@ -26,13 +26,22 @@ namespace UCOM.Operaciones_Avanzadas
         {
             try
             {
+
                 NumeroComplejoFPolar numero = obtenerNumeroEnFPolar(NumTxt.Text);
                 Double potencia;
+
                 if (PotTxt.Text.Contains("π"))
                 {
-                    string potenciaStr = PotTxt.Text.Substring(0, PotTxt.Text.IndexOf("π"));
-                    potencia = Double.Parse(potenciaStr);
-                    potencia *= Math.PI;
+                    if (PotTxt.Text.StartsWith("π"))
+                    {
+                        potencia = Math.PI;
+                    }
+                    else
+                    {
+                        string potenciaStr = PotTxt.Text.Substring(0, PotTxt.Text.IndexOf("π"));
+                        potencia = Double.Parse(potenciaStr);
+                        potencia *= Math.PI;
+                    }
                 }
                 else
                 {

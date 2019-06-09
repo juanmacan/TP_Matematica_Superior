@@ -187,9 +187,11 @@ namespace UCOM.Utils
             {
                 if (Numero[0].Substring(0, 1) == "(")
                 {
-                    if (isNumeric(Numero[0].Substring(1)) || Numero[0].Substring(1).Contains("π"))
+                    if (isNumeric(Numero[0].Substring(1)) || Numero[0].Substring(1).Contains("π") ||
+                        isNumeric(Numero[1].Substring(1)) || Numero[1].Substring(1).Contains("π"))
                     {
-                        if (isNumeric(Numero[1].Substring(0, Numero[1].Length - 1)) || Numero[0].Substring(1).Contains("π"))
+                        if (isNumeric(Numero[1].Substring(0, Numero[1].Length - 1)) || Numero[0].Substring(1).Contains("π") ||
+                            isNumeric(Numero[1].Substring(0, Numero[1].Length - 1)) || Numero[1].Substring(1).Contains("π"))
                         {
                             return true;
                         }
@@ -215,9 +217,11 @@ namespace UCOM.Utils
             {
                 if (Numero[0].Substring(0, 1) == "[")
                 {
-                    if (isNumeric(Numero[0].Substring(1)) || Numero[0].Substring(1).Contains("π"))
+                    if (isNumeric(Numero[0].Substring(1)) || Numero[0].Substring(1).Contains("π") || 
+                        isNumeric(Numero[1].Substring(1)) || Numero[1].Substring(1).Contains("π"))
                     {
-                        if (isNumeric(Numero[1].Substring(0, Numero[1].Length - 1)) || Numero[0].Substring(1).Contains("π"))
+                        if (isNumeric(Numero[1].Substring(0, Numero[1].Length - 1)) || Numero[0].Substring(1).Contains("π")  ||
+                            isNumeric(Numero[1].Substring(0, Numero[1].Length - 1)) || Numero[1].Substring(1).Contains("π"))
                         {
                             return true;
                         }
