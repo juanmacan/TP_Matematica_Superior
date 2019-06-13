@@ -26,9 +26,27 @@ namespace UCOM.Operaciones_Avanzadas
         {
             try
             {
-                NumeroComplejoFPolar numero = obtenerNumeroEnFPolar(NumTxt.Text);
-                Double potencia = Double.Parse(PotTxt.Text);
 
+                NumeroComplejoFPolar numero = obtenerNumeroEnFPolar(NumTxt.Text);
+                Double potencia;
+
+                if (PotTxt.Text.Contains("π"))
+                {
+                    if (PotTxt.Text.StartsWith("π"))
+                    {
+                        potencia = Math.PI;
+                    }
+                    else
+                    {
+                        string potenciaStr = PotTxt.Text.Substring(0, PotTxt.Text.IndexOf("π"));
+                        potencia = Double.Parse(potenciaStr);
+                        potencia *= Math.PI;
+                    }
+                }
+                else
+                {
+                    potencia = Double.Parse(PotTxt.Text);
+                }
                 NumeroComplejoFPolar Resultado = new NumeroComplejoFPolar(Math.Pow(numero.Modulo, potencia), numero.Angulo * potencia);
 
                 if (EsBinomica)
@@ -104,6 +122,16 @@ namespace UCOM.Operaciones_Avanzadas
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btmIngresarPINroComplejo_Click(object sender, EventArgs e)
+        {
+            NumTxt.Text = NumTxt.Text + "π";
+        }
+
+        private void btmIngresarPIPotencia_Click(object sender, EventArgs e)
+        {
+            PotTxt.Text = PotTxt.Text + "π";
         }
     }
 }

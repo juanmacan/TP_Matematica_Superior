@@ -114,7 +114,7 @@ namespace UCOM.Suma_Fasores
             return fas;
         }
 
-        //Convertir a binomica para facilitar las cuentas y convertir luego en fasor. Falta Terminar
+        
         public Fasor SumarFasores(Fasor fas1, Fasor fas2)
         {
             if (fas1.GetFrecuencia() == fas2.GetFrecuencia())
@@ -138,7 +138,7 @@ namespace UCOM.Suma_Fasores
             string funcion1 = Fun1Txt.Text;
             string funcion2 = Fun2Txt.Text;
 
-            //Falta implementar
+           
             try
             {
                 Fasor fun1 = StringToFasor(funcion1);

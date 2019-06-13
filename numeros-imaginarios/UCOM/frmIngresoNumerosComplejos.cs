@@ -79,5 +79,11 @@ namespace UCOM
         {
             this.Close();
         }
+
+        //INGRESAR PI
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtNumeroIngresado.Text = txtNumeroIngresado.Text + "π";
+        }
     }
 }

@@ -40,6 +40,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelResultado = new System.Windows.Forms.Label();
             this.buttonVolver = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSumar
@@ -128,7 +130,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 120);
+            this.label4.Location = new System.Drawing.Point(13, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 24);
             this.label4.TabIndex = 7;
@@ -141,7 +143,7 @@
             this.labelResultado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelResultado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.labelResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultado.Location = new System.Drawing.Point(12, 158);
+            this.labelResultado.Location = new System.Drawing.Point(12, 182);
             this.labelResultado.MinimumSize = new System.Drawing.Size(375, 0);
             this.labelResultado.Name = "labelResultado";
             this.labelResultado.Size = new System.Drawing.Size(375, 26);
@@ -149,7 +151,7 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(12, 196);
+            this.buttonVolver.Location = new System.Drawing.Point(12, 220);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(92, 23);
             this.buttonVolver.TabIndex = 9;
@@ -157,11 +159,33 @@
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.ButtonVolver_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(187, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Ingresar π (Pi) en número 1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(208, 118);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(190, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Ingresar π (Pi) en número 2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormOperacionesBasicas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 231);
+            this.ClientSize = new System.Drawing.Size(404, 253);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.labelResultado);
             this.Controls.Add(this.label4);
@@ -195,5 +219,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelResultado;
         private System.Windows.Forms.Button buttonVolver;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
