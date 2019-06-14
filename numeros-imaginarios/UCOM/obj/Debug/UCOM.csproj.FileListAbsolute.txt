@@ -10,19 +10,6 @@ C:\Users\Propietario\eclipse-workspace\miprimerjuego\TP_Matematica_Superior\nume
 C:\Users\Propietario\eclipse-workspace\miprimerjuego\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csproj.GenerateResource.Cache
 C:\Users\Abel\Source\Repos\TP_Matematica_Superior2\numeros-imaginarios\UCOM\obj\Debug\UCOM.exe
 C:\Users\Abel\Source\Repos\TP_Matematica_Superior2\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csprojAssemblyReference.cache
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.frmIngresoNumerosComplejos.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Home.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.OAForm.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.PotenciacionForm.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.RadicacionForm.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Basicas.FormOperacionesBasicas.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Properties.Resources.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Suma_Fasores.SumaFasoresForm.resources
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csproj.GenerateResource.cache
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csproj.CoreCompileInputs.cache
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.exe
-C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb
 C:\Damian\MATEMATICA SUPERIOR\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csprojAssemblyReference.cache
 C:\Damian\MATEMATICA SUPERIOR\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.frmIngresoNumerosComplejos.resources
 C:\Damian\MATEMATICA SUPERIOR\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Home.resources
@@ -36,3 +23,19 @@ C:\Damian\MATEMATICA SUPERIOR\TP_Matematica_Superior\numeros-imaginarios\UCOM\ob
 C:\Damian\MATEMATICA SUPERIOR\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csproj.CoreCompileInputs.cache
 C:\Damian\MATEMATICA SUPERIOR\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.exe
 C:\Damian\MATEMATICA SUPERIOR\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb
+C:\Apps\UCOM.exe.config
+C:\Apps\UCOM.exe
+C:\Apps\UCOM.pdb
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csprojAssemblyReference.cache
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.frmIngresoNumerosComplejos.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Home.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.OAForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.PotenciacionForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Avanzadas.RadicacionForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Operaciones_Basicas.FormOperacionesBasicas.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Properties.Resources.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.Suma_Fasores.SumaFasoresForm.resources
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csproj.GenerateResource.cache
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.csproj.CoreCompileInputs.cache
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.exe
+C:\Users\gian9\Desktop\Superior\TP_Matematica_Superior\numeros-imaginarios\UCOM\obj\Debug\UCOM.pdb

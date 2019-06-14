@@ -13,6 +13,8 @@ namespace UCOM.Suma_Fasores
 {
     public partial class SumaFasoresForm : Form
     {
+        public TextBox txtObject;
+
         public SumaFasoresForm()
         {
             InitializeComponent();
@@ -157,6 +159,101 @@ namespace UCOM.Suma_Fasores
         private void SumarBtn_Click(object sender, EventArgs e)
         {
             CalcularFasor();
+        }
+
+        private void Fun1Txt_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.txtObject = this.Fun1Txt;
+        }
+
+        private void Fun2Txt_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.txtObject = this.Fun2Txt;
+        }
+
+        private void BtnCos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!this.txtObject.Text.Contains("Cos") && !this.txtObject.Text.Contains("Sen"))
+                {
+                    this.txtObject.Text += "Cos(";
+                    this.txtObject.Focus();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void BtnSen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!this.txtObject.Text.Contains("Cos") && !this.txtObject.Text.Contains("Sen"))
+                {
+                    this.txtObject.Text += "Sen(";
+                    this.txtObject.Focus();
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void Fun1Txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '+' && e.KeyChar != '-' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != 't' && e.KeyChar != ')')
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                {
+                    e.Handled = true;
+                }
+            }
+
+            if ((this.txtObject.Text.Contains("Cos") || !this.txtObject.Text.Contains("Sen")) && e.KeyChar == ')')
+            {
+                this.txtObject.Text += ")";
+                this.txtObject.ReadOnly = true;
+            }
+        }
+
+        private void BtnPi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.txtObject.Text = "";
+            this.txtObject.ReadOnly = false;
+        }
+
+        private void Fun2Txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '+' && e.KeyChar != '-' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != 't' && e.KeyChar != ')')
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                {
+                    e.Handled = true;
+                }
+            }
+
+            if ((this.txtObject.Text.Contains("Cos") || !this.txtObject.Text.Contains("Sen")) && e.KeyChar == ')')
+            {
+                this.txtObject.Text += ")";
+                this.txtObject.ReadOnly = true;
+            }
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SumaFasoresForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }
