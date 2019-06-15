@@ -13,12 +13,73 @@ namespace UCOM.Suma_Fasores
 {
     public partial class SumaFasoresForm : Form
     {
-        public TextBox txtObject;
-
         public SumaFasoresForm()
         {
             InitializeComponent();
         }
+
+        #region Declaraciones
+
+        public TextBox txtObject;
+        public string pi = Math.PI.ToString().Replace(",", ".");
+        public static string[] letrasPermitidas = {"s", "e", "n", "c", "o"};
+        public static string[] operandosPermitidos = {"+", "-", "*", "/", "(", ")", "t", "ñ"};
+        public List<string> listPermitidosL = new List<string>(letrasPermitidas);
+        public List<string> listPermitidosO = new List<string>(operandosPermitidos);
+
+        #endregion
+
+        #region Funciones
+
+        private string ObtenerFrecuenciaYAngulo(string strCadena, ref double dblFrecuencia, ref double dblAngulo)
+        {
+            string strRespuesta = "";
+            string[] strAux;
+            string strFrecuencia = "";
+            string strAngulo = "";
+
+            if (strCadena.Contains("+"))
+            {
+                strAux = strCadena.Split('+');                
+            }
+            else
+            {
+                strAux = strCadena.Split('-');
+
+            }
+
+            if (strAux.Length != 2)
+            {
+                strRespuesta += "El argumento de la sinusoide ingresado es incorrecto.\n";
+            }
+            else
+            {
+                strFrecuencia = strAux[0].Replace("t", "");
+                strAngulo = strAux[1];
+
+                try
+                {
+                    dblFrecuencia = Convert.ToDouble(new DataTable().Compute(strFrecuencia, null));
+                }
+                catch (Exception)
+                {
+                    strRespuesta += "La frecuencia es incorrecta, por favor, no se olvide de ingresar la variable 't'.\n";
+                }
+
+                try
+                {
+                    dblAngulo = Convert.ToDouble(new DataTable().Compute(strAngulo, null));
+                }
+                catch (Exception)
+                {
+                    strRespuesta += "En Ángulo es incorrecto.\n";
+                }
+            }
+
+            return strRespuesta;
+        }
+
+        #endregion
 
         //Parsear un string y convertirlo a Fasor.Falta terminar
         public Fasor StringToFasor(string strFasor)
@@ -28,13 +89,14 @@ namespace UCOM.Suma_Fasores
             Double Angulo = 0;
             Boolean esCoseno;
 
-            int aux;
-            int aux2;
-            string aux3;
-            string[] aux4;
+            int intIndex;
+            string strArgumento;
+
+            string strResp = "";
 
             strFasor = strFasor.ToLower();
             strFasor = strFasor.Replace(" ", "");
+            strFasor = strFasor.Replace("ñ", this.pi);
 
             if (strFasor.Contains("cos"))
             {
@@ -46,8 +108,13 @@ namespace UCOM.Suma_Fasores
                 }
                 else
                 {
-                    aux = strFasor.IndexOf('c');
-                    if (!Double.TryParse(strFasor.Substring(0, aux), out Amplitud))
+                    intIndex = strFasor.IndexOf('c');
+
+                    try
+                    {
+                        Amplitud = Convert.ToDouble(new DataTable().Compute(strFasor.Substring(0, intIndex), null));
+                    }
+                    catch (Exception)
                     {
                         throw new Exception("El fasor ingresado es incorrecto.");
                     }
@@ -64,8 +131,13 @@ namespace UCOM.Suma_Fasores
                     }
                     else
                     {
-                        aux = strFasor.IndexOf('s');
-                        if (!Double.TryParse(strFasor.Substring(0, aux), out Amplitud))
+                        intIndex = strFasor.IndexOf('s');
+
+                        try
+                        {
+                            Amplitud = Convert.ToDouble(new DataTable().Compute(strFasor.Substring(0, intIndex), null));
+                        }
+                        catch (Exception)
                         {
                             throw new Exception("El fasor ingresado es incorrecto.");
                         }
@@ -77,38 +149,15 @@ namespace UCOM.Suma_Fasores
                 }
             }
 
-            aux = strFasor.IndexOf('(');
-            aux2 = strFasor.IndexOf(')');
+            strArgumento = strFasor.Substring(strFasor.IndexOf('(') + 1);
+            strArgumento = strArgumento.Remove(strArgumento.Length - 1, 1);
 
-            aux3 = strFasor.Substring(aux + 1, aux2 - aux - 1);
-            aux4 = aux3.Split('+');
-            if (aux4.Length != 2)
+
+            strResp = this.ObtenerFrecuenciaYAngulo(strArgumento, ref Frecuencia, ref Angulo);
+
+            if (strResp!="")
             {
-                aux4 = aux3.Split('-');
-                if (Double.TryParse(aux4[1], out Angulo))
-                {
-                    Angulo *= (-1);
-                }
-                else
-                {
-                    throw new Exception("El fasor ingresado es incorrecto.");
-                }
-            }
-            else
-            {
-                if (!Double.TryParse(aux4[1], out Angulo))
-                {
-                    throw new Exception("El fasor ingresado es incorrecto.");
-                }
-            }
-            if (!aux4[0].Contains("t"))
-            {
-                throw new Exception("La frecuencia debe estar multiplicada por la variable 't', ejemplo '3t'.");
-            }
-            strFasor = aux4[0].Replace("t", "");
-            if (!Double.TryParse(strFasor, out Frecuencia))
-            {
-                throw new Exception("El fasor ingresado es incorrecto.");
+                throw new Exception(strResp);
             }
 
             Fasor fas = new Fasor(Amplitud, Frecuencia, Angulo, esCoseno);
@@ -161,99 +210,71 @@ namespace UCOM.Suma_Fasores
             CalcularFasor();
         }
 
-        private void Fun1Txt_MouseClick(object sender, MouseEventArgs e)
-        {
-            this.txtObject = this.Fun1Txt;
-        }
-
-        private void Fun2Txt_MouseClick(object sender, MouseEventArgs e)
-        {
-            this.txtObject = this.Fun2Txt;
-        }
-
-        private void BtnCos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!this.txtObject.Text.Contains("Cos") && !this.txtObject.Text.Contains("Sen"))
-                {
-                    this.txtObject.Text += "Cos(";
-                    this.txtObject.Focus();
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void BtnSen_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!this.txtObject.Text.Contains("Cos") && !this.txtObject.Text.Contains("Sen"))
-                {
-                    this.txtObject.Text += "Sen(";
-                    this.txtObject.Focus();
-                }
-
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void Fun1Txt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '+' && e.KeyChar != '-' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != 't' && e.KeyChar != ')')
-            {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-                {
-                    e.Handled = true;
-                }
-            }
-
-            if ((this.txtObject.Text.Contains("Cos") || !this.txtObject.Text.Contains("Sen")) && e.KeyChar == ')')
-            {
-                this.txtObject.Text += ")";
-                this.txtObject.ReadOnly = true;
-            }
-        }
-
-        private void BtnPi_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnLimpiar_Click(object sender, EventArgs e)
-        {
-            this.txtObject.Text = "";
-            this.txtObject.ReadOnly = false;
-        }
-
-        private void Fun2Txt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != '+' && e.KeyChar != '-' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != 't' && e.KeyChar != ')')
-            {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-                {
-                    e.Handled = true;
-                }
-            }
-
-            if ((this.txtObject.Text.Contains("Cos") || !this.txtObject.Text.Contains("Sen")) && e.KeyChar == ')')
-            {
-                this.txtObject.Text += ")";
-                this.txtObject.ReadOnly = true;
-            }
-        }
-
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void SumaFasoresForm_Load(object sender, EventArgs e)
+        private void Fun1Txt_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (this.Fun1Txt.Text.ToLower().Contains("sen") || this.Fun1Txt.Text.ToLower().Contains("cos"))
+            {
+                if (listPermitidosL.Contains(e.KeyChar.ToString().ToLower()))
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (!listPermitidosO.Contains(e.KeyChar.ToString()))
+                    {
+                        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                        {
+                            e.Handled = true;
+                        }
+                    }                    
+                }
+            }
+            else
+            {
+                if (!listPermitidosO.Contains(e.KeyChar.ToString()) && !listPermitidosL.Contains(e.KeyChar.ToString()))
+                {
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void Fun2Txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (this.Fun2Txt.Text.ToLower().Contains("sen") || this.Fun2Txt.Text.ToLower().Contains("cos"))
+            {
+                if (listPermitidosL.Contains(e.KeyChar.ToString().ToLower()))
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (!listPermitidosO.Contains(e.KeyChar.ToString()))
+                    {
+                        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (!listPermitidosO.Contains(e.KeyChar.ToString()) && !listPermitidosL.Contains(e.KeyChar.ToString()))
+                {
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
         }
     }
 }
