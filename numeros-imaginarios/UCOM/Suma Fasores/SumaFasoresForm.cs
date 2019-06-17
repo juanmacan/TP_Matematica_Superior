@@ -45,7 +45,6 @@ namespace UCOM.Suma_Fasores
             else
             {
                 strAux = strCadena.Split('-');
-
             }
 
             if (strAux.Length != 2)
@@ -68,7 +67,12 @@ namespace UCOM.Suma_Fasores
 
                 try
                 {
-                    dblAngulo = Convert.ToDouble(new DataTable().Compute(strAngulo, null));
+                    dblAngulo = AngulosHelperClass.Instance().GetAnguloCorregido(Convert.ToDouble(new DataTable().Compute(strAngulo, null)));
+                    if (strCadena.Contains("-"))
+                    {
+                        dblAngulo *= -1;
+                    }
+
                 }
                 catch (Exception)
                 {
@@ -197,7 +201,7 @@ namespace UCOM.Suma_Fasores
                 Fasor fun2 = StringToFasor(funcion2);
 
                 Fasor Resultado = SumarFasores(fun1, fun2);
-                RsltTxt.Text = Resultado.GetAmplitud() + " sen(" + Resultado.GetFrecuencia() + "t + " + Resultado.GetAngulo() + ")";
+                RsltTxt.Text = Resultado.GetAmplitud() + " cos(" + Resultado.GetFrecuencia() + "t + " + Resultado.GetAngulo() + ")";
             }
             catch (Exception ex)
             {

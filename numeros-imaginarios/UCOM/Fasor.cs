@@ -28,9 +28,18 @@ namespace UCOM
 
         public NumeroComplejoFBinomica ConvertirABinomica()
         {
-            double real = Amplitud * Math.Cos(AngulosHelperClass.Instance().GetAnguloCorregido(Angulo));
-            double img = Amplitud * Math.Sin(AngulosHelperClass.Instance().GetAnguloCorregido(Angulo));
-            return new NumeroComplejoFBinomica(real,img);
+            if (esCosenoidal)
+            {
+                double real = Amplitud * Math.Cos(AngulosHelperClass.Instance().GetAnguloCorregido(Angulo));
+                double img = Amplitud * Math.Sin(AngulosHelperClass.Instance().GetAnguloCorregido(Angulo));
+                return new NumeroComplejoFBinomica(real, img);
+            }
+            else
+            {
+                double real = Amplitud * Math.Cos(AngulosHelperClass.Instance().GetAnguloCorregido(Angulo) - Math.PI/2);
+                double img = Amplitud * Math.Sin(AngulosHelperClass.Instance().GetAnguloCorregido(Angulo) - Math.PI/2);
+                return new NumeroComplejoFBinomica(real, img);
+            }
         }
 
     }
